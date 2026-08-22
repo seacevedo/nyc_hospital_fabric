@@ -1,0 +1,64 @@
+{
+  "formatVersion": "202502",
+  "computeEngineSettings": {
+    "allowModernEvaluationEngine": true
+  },
+  "name": "Import NYC Hospital Data From Databricks",
+  "queryGroups": [],
+  "documentLocale": "en-US",
+  "queriesMetadata": {
+    "`hospital_data` `hospital_data_bronze` `ny_hopsital_discharges_2022`": {
+      "queryId": "1de79e14-0a7b-4f98-9254-4073fdd4842a",
+      "queryName": "`hospital_data` `hospital_data_bronze` `ny_hopsital_discharges_2022`"
+    },
+    "`hospital_data` `hospital_data_bronze` `ny_hospital_discharges_2018`": {
+      "queryId": "d7ad90c6-7f55-42c2-9078-e21051136956",
+      "queryName": "`hospital_data` `hospital_data_bronze` `ny_hospital_discharges_2018`"
+    },
+    "`hospital_data` `hospital_data_bronze` `ny_hospital_discharges_2019`": {
+      "queryId": "aac19478-ee42-492c-b94b-012a4e9362c6",
+      "queryName": "`hospital_data` `hospital_data_bronze` `ny_hospital_discharges_2019`",
+      "loadEnabled": false
+    },
+    "`hospital_data` `hospital_data_bronze` `ny_hospital_discharges_2020`": {
+      "queryId": "6b28fe53-9f22-4e00-8700-464674b0aeba",
+      "queryName": "`hospital_data` `hospital_data_bronze` `ny_hospital_discharges_2020`"
+    },
+    "`hospital_data` `hospital_data_bronze` `ny_hospital_discharges_2021`": {
+      "queryId": "2a6b7c99-25d8-4547-b957-ef5b9cb6d7ed",
+      "queryName": "`hospital_data` `hospital_data_bronze` `ny_hospital_discharges_2021`"
+    },
+    "`hospital_data` `hospital_data_bronze` `ny_hospital_discharges_2023`": {
+      "queryId": "fdca5208-90ea-46a6-b7d4-188dad0bd424",
+      "queryName": "`hospital_data` `hospital_data_bronze` `ny_hospital_discharges_2023`"
+    },
+    "`hospital_data` `hospital_data_bronze` `ny_hospital_discharges_2024`": {
+      "queryId": "75722564-231f-43f1-9138-91ddea2bf5c8",
+      "queryName": "`hospital_data` `hospital_data_bronze` `ny_hospital_discharges_2024`"
+    },
+    "`hospital_data` `hospital_data_bronze` `ny_hospital_discharg_DataDestination": {
+      "queryId": "536cc3b4-4f55-44b8-8fee-c3140f4f3fc4",
+      "queryName": "`hospital_data` `hospital_data_bronze` `ny_hospital_discharg_DataDestination",
+      "isHidden": true,
+      "loadEnabled": false
+    },
+    "`hospital_data` `hospital_data_bronze` `ny_hospital_DataDestinationTransform": {
+      "queryId": "f67b0d1d-500c-4792-81e9-803b526649e0",
+      "queryName": "`hospital_data` `hospital_data_bronze` `ny_hospital_DataDestinationTransform",
+      "isHidden": true,
+      "loadEnabled": false
+    }
+  },
+  "connections": [
+    {
+      "path": "{\"host\":\"dbc-e27243fb-80d4.cloud.databricks.com\",\"httpPath\":\"\\/sql\\/1.0\\/warehouses\\/58dcd1c263d9ae21\"}",
+      "kind": "DatabricksMultiCloud",
+      "connectionId": "{\"ClusterId\":\"f6ebe04b-94be-44fc-a0ea-c891e142a1d6\",\"DatasourceId\":\"87c75ef5-6ec6-4284-be12-3e890f4adda3\"}"
+    },
+    {
+      "path": "Lakehouse",
+      "kind": "Lakehouse",
+      "connectionId": "{\"ClusterId\":\"f6ebe04b-94be-44fc-a0ea-c891e142a1d6\",\"DatasourceId\":\"b69425a9-4b9c-484a-9d16-dd2fadc01dcc\"}"
+    }
+  ]
+}
