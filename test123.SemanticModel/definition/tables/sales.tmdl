@@ -1,0 +1,117 @@
+table sales
+	lineageTag: fb5bd322-1159-4f70-b083-34e58d28703a
+
+	refreshPolicy
+		policyType: basic
+		rollingWindowGranularity: day
+		rollingWindowPeriods: 7
+		incrementalGranularity: day
+		incrementalPeriods: 1
+		sourceExpression =
+			let
+			    Source = Csv.Document(File.Contents("C:\Users\saula\Downloads\sales.csv"),[Delimiter=",", Columns=9, Encoding=65001, QuoteStyle=QuoteStyle.None]),
+			    #"Promoted Headers" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+			    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"SalesOrderNumber", type text}, {"SalesOrderLineNumber", Int64.Type}, {"OrderDate", type datetime}, {"CustomerName", type text}, {"EmailAddress", type text}, {"Item", type text}, {"Quantity", Int64.Type}, {"UnitPrice", type number}, {"TaxAmount", type number}}),
+			    #"Filtered Rows" = Table.SelectRows(#"Changed Type", each [OrderDate] >= RangeStart and [OrderDate] < RangeEnd)
+			in
+			    #"Filtered Rows"
+
+	column SalesOrderNumber
+		dataType: string
+		lineageTag: 72b0de03-d759-4c4f-958d-f52a9f7293ab
+		summarizeBy: none
+		sourceColumn: SalesOrderNumber
+
+		annotation SummarizationSetBy = Automatic
+
+	column SalesOrderLineNumber
+		dataType: int64
+		formatString: 0
+		lineageTag: d202efbd-eb4a-41a8-bf4b-e89975a16601
+		summarizeBy: sum
+		sourceColumn: SalesOrderLineNumber
+
+		annotation SummarizationSetBy = Automatic
+
+	column OrderDate
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: e92be582-6fe4-4bc1-99a4-e7e101711bc1
+		summarizeBy: none
+		sourceColumn: OrderDate
+
+		variation Variation
+			isDefault
+			relationship: 76896296-df56-43a1-bb48-3c2de0780281
+			defaultHierarchy: LocalDateTable_668808cd-7837-480a-946a-b6039709b661.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column CustomerName
+		dataType: string
+		lineageTag: 558943a0-2cab-47db-b4e6-f8d051164977
+		summarizeBy: none
+		sourceColumn: CustomerName
+
+		annotation SummarizationSetBy = Automatic
+
+	column EmailAddress
+		dataType: string
+		lineageTag: 73259397-1087-48ef-b201-1eed295506ec
+		summarizeBy: none
+		sourceColumn: EmailAddress
+
+		annotation SummarizationSetBy = Automatic
+
+	column Item
+		dataType: string
+		lineageTag: 9e29f2b0-a37b-48ad-b23b-03e23a39ed27
+		summarizeBy: none
+		sourceColumn: Item
+
+		annotation SummarizationSetBy = Automatic
+
+	column Quantity
+		dataType: int64
+		formatString: 0
+		lineageTag: e8660307-7b3c-4063-9a05-a52a3b579d54
+		summarizeBy: sum
+		sourceColumn: Quantity
+
+		annotation SummarizationSetBy = Automatic
+
+	column UnitPrice
+		dataType: double
+		lineageTag: 6bb613d7-c157-40e2-b32b-a95bc73e5b56
+		summarizeBy: sum
+		sourceColumn: UnitPrice
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column TaxAmount
+		dataType: double
+		lineageTag: 7e0e2491-03af-4849-86b6-f7a4c254bc5d
+		summarizeBy: sum
+		sourceColumn: TaxAmount
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition sales = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents("C:\Users\saula\Downloads\sales.csv"),[Delimiter=",", Columns=9, Encoding=65001, QuoteStyle=QuoteStyle.None]),
+				    #"Promoted Headers" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"SalesOrderNumber", type text}, {"SalesOrderLineNumber", Int64.Type}, {"OrderDate", type datetime}, {"CustomerName", type text}, {"EmailAddress", type text}, {"Item", type text}, {"Quantity", Int64.Type}, {"UnitPrice", type number}, {"TaxAmount", type number}}),
+				    #"Filtered Rows" = Table.SelectRows(#"Changed Type", each [OrderDate] >= RangeStart and [OrderDate] < RangeEnd)
+				in
+				    #"Filtered Rows"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

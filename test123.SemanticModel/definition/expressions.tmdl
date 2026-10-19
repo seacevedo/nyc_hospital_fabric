@@ -1,0 +1,12 @@
+expression RangeStart = #datetime(2019, 7, 1, 0, 0, 0) meta [IsParameterQuery=true, Type="DateTime", IsParameterQueryRequired=true]
+	lineageTag: 267d3246-77da-4a8f-913e-e6041e9724f9
+
+	annotation PBI_ResultType = DateTime
+
+expression RangeEnd = #datetime(2019, 7, 8, 0, 0, 0) meta [IsParameterQuery=true, Type="DateTime", IsParameterQueryRequired=true]
+	lineageTag: cc62c871-59ca-4771-8f2c-6b0fe8754ded
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = DateTime
+

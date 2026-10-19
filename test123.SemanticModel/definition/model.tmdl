@@ -1,0 +1,19 @@
+model Model
+	culture: en-US
+	defaultPowerBIDataSourceVersion: powerBI_V3
+	sourceQueryCulture: en-US
+	valueFilterBehavior: independent
+	dataAccessOptions
+		legacyRedirects
+		returnErrorValuesAsNull
+
+annotation __PBI_TimeIntelligenceEnabled = 1
+
+annotation PBI_QueryOrder = ["sales","RangeStart","RangeEnd"]
+
+ref table sales
+ref table DateTableTemplate_bdd81b73-ef8f-439a-b855-b185ddc8164d
+ref table LocalDateTable_668808cd-7837-480a-946a-b6039709b661
+
+ref cultureInfo en-US
+
