@@ -1,0 +1,22 @@
+{
+  "formatVersion": "202502",
+  "computeEngineSettings": {
+    "allowModernEvaluationEngine": true
+  },
+  "name": "Dataflow 1",
+  "queryGroups": [],
+  "documentLocale": "en-US",
+  "queriesMetadata": {
+    "Query": {
+      "queryId": "000ea64e-605e-40f1-9c96-28dd805f083a",
+      "queryName": "Query"
+    }
+  },
+  "connections": [
+    {
+      "path": "https://jsonplaceholder.typicode.com/todos/1",
+      "kind": "Web",
+      "connectionId": "{\"ClusterId\":\"f6ebe04b-94be-44fc-a0ea-c891e142a1d6\",\"DatasourceId\":\"2e88f04b-5c3a-4e50-9ba7-a255f8371334\"}"
+    }
+  ]
+}

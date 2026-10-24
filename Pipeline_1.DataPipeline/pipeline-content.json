@@ -1,0 +1,39 @@
+{
+  "properties": {
+    "activities": [
+      {
+        "name": "Until1",
+        "type": "Until",
+        "dependsOn": [],
+        "typeProperties": {
+          "expression": {
+            "value": "@equals(variables('TestVariable'), 1)",
+            "type": "Expression"
+          },
+          "activities": [
+            {
+              "name": "Set variable1",
+              "type": "SetVariable",
+              "dependsOn": [],
+              "policy": {
+                "secureOutput": false,
+                "secureInput": false
+              },
+              "typeProperties": {
+                "variableName": "TestVariable",
+                "value": 1
+              }
+            }
+          ],
+          "timeout": "0.12:00:00"
+        }
+      }
+    ],
+    "variables": {
+      "TestVariable": {
+        "type": "Integer",
+        "defaultValue": 0
+      }
+    }
+  }
+}

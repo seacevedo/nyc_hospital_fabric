@@ -1,11 +1,11 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
   "metadata": {
-    "type": "Dataflow",
-    "displayName": "Import NYC Hospital Data From Databricks"
+    "type": "Lakehouse",
+    "displayName": "fab_lh"
   },
   "config": {
     "version": "2.0",
-    "logicalId": "4139acb1-cad6-98e1-4f06-ee3b41ac43c6"
+    "logicalId": "e608ff43-92a9-92c2-48dd-f6ce9224538e"
   }
 }
