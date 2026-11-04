@@ -13,7 +13,18 @@
 
 # Welcome to your new notebook
 # Type here in the cell editor to add code!
+# My new comment
 
+# METADATA ********************
+
+# META {
+# META   "language": "python",
+# META   "language_group": "synapse_pyspark"
+# META }
+
+# CELL ********************
+
+df = spark.read.table("")
 
 # METADATA ********************
 
