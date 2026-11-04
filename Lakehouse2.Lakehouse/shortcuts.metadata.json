@@ -1,0 +1,28 @@
+[
+  {
+    "name": "countryOrRegion=Canada",
+    "path": "/Tables/dbo",
+    "target": {
+      "type": "OneLake",
+      "oneLake": {
+        "path": "Tables/dbo/PublicHoliday/countryOrRegion=Canada",
+        "itemId": "262344c7-d7e4-af87-4e0e-e9703de4f5e9",
+        "workspaceId": "00000000-0000-0000-0000-000000000000",
+        "artifactType": "Lakehouse"
+      }
+    }
+  },
+  {
+    "name": "countryOrRegion=Argentina",
+    "path": "/Tables/dbo",
+    "target": {
+      "type": "OneLake",
+      "oneLake": {
+        "path": "Tables/dbo/PublicHoliday/countryOrRegion=Argentina",
+        "itemId": "262344c7-d7e4-af87-4e0e-e9703de4f5e9",
+        "workspaceId": "00000000-0000-0000-0000-000000000000",
+        "artifactType": "Lakehouse"
+      }
+    }
+  }
+]
